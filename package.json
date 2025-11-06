@@ -1,16 +1,19 @@
 {
-  "name": "express",
+  "name": "api",
   "version": "1.0.0",
-  "description": "",
-  "type": "module",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "main": "server.js",
+  "scripts": {
+    "start": "concurrently \"npm run server1\" \"npm run server2\"",
+    "server1": "nodemon server.js",
+    "server2": "nodemon server2.js"
+  },
   "dependencies": {
-    "@types/express": "^5.0.0",
-    "express": "^4.18.2"
+    "express": "^5.1.0",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0"
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.10",
+    "npm-run-all": "^4.1.5"
   }
 }
